@@ -7,11 +7,11 @@ export default class Array<T> {
         this.items = args
     }
 
-    insert(item: T) {
+    insert(item: T): void {
         this.items[this.getArrayLen()] = item
     }
 
-    removeAt(index: number) {
+    removeAt(index: number): void {
         let arrLen = this.getArrayLen()
         if (index >= arrLen || index < 0) throw new TypeError('IllegalArgumentException')
 
