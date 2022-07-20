@@ -10,7 +10,7 @@ var stack = new Stack_1["default"]();
 // console.log(stack.isEmpty())
 // console.log(`${stack}`)
 // exercise
-var str = '(1 + 2)[{}]<a>>';
+var str = '(1 + 2)[{]]<a></a>';
 var openBrackets = ['(', '{', '[', '<'];
 var closeBrackets = [')', '}', ']', '>'];
 function isStringBalance(str) {
@@ -19,12 +19,12 @@ function isStringBalance(str) {
         if (openBrackets.includes(char))
             stack.push(char);
         if (closeBrackets.includes(char)) {
-            try {
-                stack.pop();
-            }
-            catch (IllegalStateException) {
+            if (stack.isEmpty())
                 return false;
-            }
+            var item = stack.pop();
+            var charIndex = closeBrackets.indexOf(char);
+            if (item !== openBrackets[charIndex])
+                return false;
         }
     }
     return stack.isEmpty();
