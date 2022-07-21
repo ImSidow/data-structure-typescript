@@ -1,7 +1,6 @@
 import Queue from "./Queue"
 
 class PriorityQueue<T> extends Queue<T> {
-
     enqueue(value: T) {
         for (let i = 0; i < this.len + 1; i++) {
             let currentElement = this.items[i] ?? value

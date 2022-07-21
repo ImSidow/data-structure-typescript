@@ -17,8 +17,12 @@ import PriorityQueue from "./PriorityQueue";
 const priorityQueue = new PriorityQueue()
 
 priorityQueue.enqueue(1)
-priorityQueue.enqueue(3)
+priorityQueue.enqueue(4)
 priorityQueue.enqueue(5)
+priorityQueue.enqueue(6)
+priorityQueue.enqueue(3)
+priorityQueue.enqueue(7)
 priorityQueue.enqueue(2)
+priorityQueue.enqueue(2) 
 
 console.log(`${priorityQueue}`)
