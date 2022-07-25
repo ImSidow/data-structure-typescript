@@ -1,18 +1,12 @@
-let str = 'A Green Apple';
+import HashTable from './HashTable';
 
-let obj: Record<string, any> = {};
+const hashTable = new HashTable<string, string | number | boolean>();
 
-for (let char of str) {
-    if (!obj[char]) obj[char] = 1;
-    else obj[char] += 1;
-}
+hashTable.put('name', 'Sidow');
+hashTable.put('age', 25);
+hashTable.put('isMarried', false);
+hashTable.put('name', 'Asad');
 
-let nonRepeatingChar = '';
-for (let char in obj) {
-    if (obj[char] === 1) {
-        nonRepeatingChar = char;
-        break;
-    }
-}
+// console.log(hashTable.items)
 
-console.log(nonRepeatingChar);
+console.log(`${hashTable}`);

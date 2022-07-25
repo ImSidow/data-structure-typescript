@@ -1,17 +1,10 @@
-var str = 'A Green Apple';
-var obj = {};
-for (var _i = 0, str_1 = str; _i < str_1.length; _i++) {
-    var char = str_1[_i];
-    if (!obj[char])
-        obj[char] = 1;
-    else
-        obj[char] += 1;
-}
-var nonRepeatingChar = '';
-for (var char in obj) {
-    if (obj[char] === 1) {
-        nonRepeatingChar = char;
-        break;
-    }
-}
-console.log(nonRepeatingChar);
+"use strict";
+exports.__esModule = true;
+var HashTable_1 = require("./HashTable");
+var hashTable = new HashTable_1["default"]();
+hashTable.put('name', 'Sidow');
+hashTable.put('age', 25);
+hashTable.put('isMarried', false);
+hashTable.put('name', 'Asad');
+// console.log(hashTable.items)
+console.log("".concat(hashTable));
